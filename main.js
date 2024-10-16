@@ -124,3 +124,47 @@ const toString = function (object) {
 console.log(toString({ name: "John", age: 24 })); // => "John, 24"
 toString({ firstName: "John", lastName: "Doe" }); // => "John, Doe"
 toString({ name: "Mark", position: "Full-Stack Developer", salary: 600 }); // => "Mark, Full-Stack Developer, 600"
+
+
+// Q7
+
+
+// Make sure to loop over the bills object
+const billsForJanuary = {
+    waterBill: 25,
+    electricityBill: 50,
+    hospitalBill: 1000,
+  };
+  
+  const billsForFebruary = {
+    waterBill: 30,
+    electricityBill: 45,
+    insurance: 300,
+  };
+  
+  const totalBill = function (billsObject) {
+    let sum = 0
+    for (let key in billsObject){ sum = sum + billsObject[key]}
+    return sum
+  };
+  
+  console.log(totalBill(billsForJanuary)); // => 1075
+  totalBill(billsForFebruary); // => 375
+
+  // Q8
+
+  const users = {
+    userOne: { username: "Jane", password: "123456" },
+    userTwo: { username: "admin", password: "abc123" },
+  };
+  
+  const login = function (username, password) {
+    for (let y in users){ if (users[y]["username"] === username && users[y]["password"] === users[y]["password"]) return " Succes"}
+    return " fail "
+  };
+  
+  login("Jane", "123456"); // => "Login Successful"
+  login("Jane", "5321"); // => "Login Failed"
+  login("Mark", "123456"); // => "Login Failed"
+  login("admin", "abc123"); // => "Login Successful"
+  login("admin", "aaabc123"); // => "Login Failed"
